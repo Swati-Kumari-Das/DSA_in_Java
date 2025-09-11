@@ -128,7 +128,7 @@ class Solution {
 
 # Optimized Approach (Sliding Window + HashMap)
 
-Idea:
+**Idea:**
 Use two pointers (i, j) to define a sliding window.
 
 Expand j by including characters in a HashMap (to count occurrences).
@@ -137,12 +137,11 @@ If the window has all unique characters (map.size() == j - i + 1), update max le
 
 If there are duplicates (map.size() < j - i + 1), shrink the window from the left (i) until it becomes valid again.
 
-Complexity:
+**Complexity:**
 
-Time Complexity: O(n) (each character is processed at most twice).
-
-Space Complexity: O(min(n, charset)) (HashMap to store counts of characters).
-
+**Time Complexity:** O(n) (each character is processed at most twice).
+**Space Complexity:**  O(min(n, charset)) (HashMap to store counts of characters).
+```java
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         int i = 0, j = 0;
@@ -171,3 +170,4 @@ class Solution {
         return maxLen;
     }
 }
+```
