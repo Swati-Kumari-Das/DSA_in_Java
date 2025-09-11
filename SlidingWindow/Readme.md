@@ -3,6 +3,8 @@
 link: https://leetcode.com/problems/minimum-size-subarray-sum/description/?envType=study-plan-v2&envId=top-interview-150
 TC = O(n)
 SC = O(1)
+
+```bash
 class Solution {
     public int minSubArrayLen(int target, int[] nums) {
     int i=0,j=0;
@@ -21,3 +23,5 @@ class Solution {
     return (minLen==Integer.MAX_VALUE)?0:minLen; 
     }
 }
+
+```
