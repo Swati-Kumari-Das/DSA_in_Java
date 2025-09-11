@@ -1,4 +1,4 @@
-# Minimum Size Subarray Sum  
+1. # Minimum Size Subarray Sum  
 
 [LeetCode Problem Link](https://leetcode.com/problems/minimum-size-subarray-sum/description/?envType=study-plan-v2&envId=top-interview-150)
 
