@@ -171,3 +171,139 @@ class Solution {
     }
 }
 ```
+
+
+# Minimum Window Substring
+
+**Problem Link:** [LeetCode - Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/?envType=study-plan-v2&envId=top-interview-150)
+
+---
+
+## 🟢 Problem Statement
+Given two strings `s` and `t` of lengths `m` and `n` respectively, return the **minimum window substring** of `s` such that every character in `t` (including duplicates) is included in the window.  
+If no such substring exists, return an empty string `""`.
+
+---
+
+## 🔴 Approach 1: Brute Force
+1. Generate all possible substrings of `s`.  
+2. For each substring, check if it contains all characters of `t` with required frequency.  
+3. If yes, update the minimum length substring.  
+4. Return the smallest substring at the end.  
+
+### ⏱ Time Complexity
+- O(m³) in the worst case (O(m²) substrings × O(m+n) checking).  
+
+### 📦 Space Complexity
+- O(n) for frequency tracking.  
+
+### 💻 Code (Brute Force)
+```java
+class Solution {
+    private boolean isValid(String sub, String t) {
+        int[] freq = new int[128];
+        for (char c : t.toCharArray()) {
+            freq[c]++;
+        }
+        for (char c : sub.toCharArray()) {
+            if (freq[c] > 0) {
+                freq[c]--;
+            }
+        }
+        for (int f : freq) {
+            if (f > 0) return false;
+        }
+        return true;
+    }
+
+    public String minWindowBrute(String s, String t) {
+        int n = s.length();
+        String result = "";
+        int minLen = Integer.MAX_VALUE;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                String sub = s.substring(i, j + 1);
+                if (isValid(sub, t) && sub.length() < minLen) {
+                    minLen = sub.length();
+                    result = sub;
+                }
+            }
+        }
+        return result;
+    }
+}
+```
+## Approach 2: Optimized Sliding Window
+Count frequencies of characters in t using a HashMap.
+
+Use two pointers (i, j) to maintain a sliding window on s.
+
+Expand j and decrease the count of seen characters from the map.
+
+When a character’s frequency reaches zero, reduce uniqueCharCount.
+
+When all characters from t are covered (uniqueCharCount == 0), try shrinking the window from the left (i) to minimize length.
+
+Track the smallest valid window.
+
+Return the substring if found, otherwise return "".
+
+**Time Complexity**
+O(m + n) → each character is processed at most twice.
+
+**Space Complexity**
+O(n) for storing frequency map of t.
+
+```java
+
+import java.util.*;
+class Solution {
+    public String minWindow(String s, String t) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < t.length(); i++) {
+            char ch = t.charAt(i);
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        }
+
+        int uniqueCharCount = map.size();
+        int si = -1;
+        int j = 0, i = 0;
+        int minLen = Integer.MAX_VALUE;
+        int n = s.length();
+
+        while (j < n) {
+            char ch = s.charAt(j);
+            if (map.containsKey(ch)) {
+                map.put(ch, map.get(ch) - 1);
+                if (map.get(ch) == 0) {
+                    uniqueCharCount--;
+                }
+            }
+
+            while (uniqueCharCount == 0) {
+                int len = j - i + 1;
+                if (len < minLen) {
+                    minLen = len;
+                    si = i;
+                }
+
+                char leftChar = s.charAt(i);
+                if (map.containsKey(leftChar)) {
+                    map.put(leftChar, map.get(leftChar) + 1);
+                    if (map.get(leftChar) > 0) {
+                        uniqueCharCount++;
+                    }
+                }
+                i++;
+            }
+            j++;
+        }
+
+        if (si == -1) {
+            return "";
+        }
+        return s.substring(si, si + minLen);
+    }
+}
+```
