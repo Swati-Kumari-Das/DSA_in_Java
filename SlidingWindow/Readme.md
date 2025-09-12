@@ -309,7 +309,7 @@ class Solution {
 ```
 
 
-# Sliding Window Maximum
+# 4 Sliding Window Maximum
 
 Given an array `nums` and an integer `k`, find the maximum value in each sliding window of size `k`.
 
