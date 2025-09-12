@@ -173,7 +173,7 @@ class Solution {
 ```
 
 
-# Minimum Window Substring
+# 3. Minimum Window Substring
 
 **Problem Link:** [LeetCode - Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/?envType=study-plan-v2&envId=top-interview-150)
 
