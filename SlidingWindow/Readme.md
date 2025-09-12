@@ -307,3 +307,134 @@ class Solution {
     }
 }
 ```
+
+
+# Sliding Window Maximum
+
+Given an array `nums` and an integer `k`, find the maximum value in each sliding window of size `k`.
+
+---
+
+## 1. Brute Force Approach
+
+### Idea
+- For each window of size `k`, scan all elements and take the maximum.  
+- Very slow for large `n`.
+
+### Complexity
+- **Time Complexity:** O(n * k)  
+- **Space Complexity:** O(1)  
+
+### Code
+```java
+class Solution {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        if (nums == null || nums.length == 0) return new int[0];
+        int n = nums.length;
+        int[] result = new int[n - k + 1];
+        
+        for (int i = 0; i <= n - k; i++) {
+            int maxVal = Integer.MIN_VALUE;
+            for (int j = i; j < i + k; j++) {
+                maxVal = Math.max(maxVal, nums[j]);
+            }
+            result[i] = maxVal;
+        }
+        return result;
+    }
+}
+```
+### 2. Heap Based Approach
+**Idea**
+Use a max heap (priority queue) to keep track of the largest element in the current window.
+
+Insert current element → remove elements outside the window → top of heap is max.
+
+**Complexity**
+**Time Complexity**: O(n log k)
+
+**Space Complexity**: O(k)
+
+```java
+import java.util.*;
+
+class Solution {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        if (nums == null || nums.length == 0) return new int[0];
+        int n = nums.length;
+        int[] result = new int[n - k + 1];
+        
+        // Max Heap: stores {value, index}
+        PriorityQueue<int[]> maxHeap = new PriorityQueue<>((a, b) -> b[0] - a[0]);
+        
+        for (int i = 0; i < n; i++) {
+            maxHeap.offer(new int[]{nums[i], i});
+            
+            // Remove elements outside the window
+            while (maxHeap.peek()[1] <= i - k) {
+                maxHeap.poll();
+            }
+            
+            // Record result once window is fully formed
+            if (i >= k - 1) {
+                result[i - k + 1] = maxHeap.peek()[0];
+            }
+        }
+        return result;
+    }
+}
+```
+
+### 3. Optimized Deque Based Approach
+**Idea**
+Use a deque to store indices of elements in decreasing order of values.
+
+Front of deque always holds the maximum for the current window.
+
+Remove smaller elements from the back (not useful).
+
+Remove elements outside the current window from the front.
+
+**Complexity**
+**Time Complexity: O(n)**
+
+**Space Complexity: O(k)**
+
+```java
+import java.util.*;
+
+class Solution {
+    public static int[] maxSlidingWindow(int[] nums, int k) {
+        if (nums == null || nums.length == 0 || k <= 0) {
+            return new int[0];
+        }
+        int n = nums.length;
+        int[] result = new int[n - k + 1];
+        Deque<Integer> deque = new LinkedList<>();
+        int i = 0, j = 0;
+        
+        while (j < n) {
+            // Step 1: Remove smaller elements from the back
+            while (!deque.isEmpty() && nums[deque.peekLast()] < nums[j]) {
+                deque.pollLast();
+            }
+            
+            // Step 2: Add current index
+            deque.offerLast(j);
+            
+            // Step 3: Remove out-of-window indices from the front
+            if (!deque.isEmpty() && deque.peekFirst() < i) {
+                deque.pollFirst();
+            }
+            
+            // Step 4: If window is full, record the max
+            if (j - i + 1 == k) {
+                result[i] = nums[deque.peekFirst()];
+                i++;
+            }
+            j++;
+        }
+        return result;
+    }
+}
+```
