@@ -1,5 +1,5 @@
 //Brute Approach 
-//tc:O(n^2)
+//tc:O(nlogn + mlogm)
 //sc:O(n)
 public class Solution {
     public boolean isAnagram(String s, String t) {
@@ -16,7 +16,7 @@ public class Solution {
 }
 
 //Hash Table (Using Array)
-//tc:O(n)
+//tc:O(n+m)
 //sc:O(1)
 class Solution {
     public boolean isAnagram(String s, String t) {
