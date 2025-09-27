@@ -47,3 +47,76 @@ class Solution {
         return new ArrayList<>(res);
     }
 }
+
+
+// Approach: Sort + Two Pointers
+
+/*
+Approach:
+1. Sort the array.
+2. Fix one element (n1) in each iteration.
+3. Use the two-pointer technique (like Two Sum) to find pairs (n2, n3)
+   such that n1 + n2 + n3 = 0.
+4. Skip duplicate elements to avoid duplicate triplets.
+5. Collect all unique triplets.
+
+Time Complexity:
+- Sorting takes O(n log n).
+- Outer loop runs O(n).
+- Two-pointer search per element runs O(n).
+- Total: O(n^2).
+
+Space Complexity:
+- O(1) extra (ignoring output list).
+*/
+
+import java.util.*;
+
+class Solution {
+    List<List<Integer>> res = new ArrayList<>();
+
+    // Helper method: two sum with two pointers
+    void twoSum(int[] nums, int target, int i, int j) {
+        while (i < j) {
+            if (nums[i] + nums[j] > target) {
+                j--;
+            } else if (nums[i] + nums[j] < target) {
+                i++;
+            } else {
+                // Skip duplicates for left pointer
+                while (i < j && nums[i] == nums[i + 1]) i++;
+                // Skip duplicates for right pointer
+                while (i < j && nums[j] == nums[j - 1]) j--;
+
+                // Found valid triplet
+                List<Integer> triplet = Arrays.asList(-target, nums[i], nums[j]);
+                res.add(triplet);
+
+                i++;
+                j--;
+            }
+        }
+    }
+
+    public List<List<Integer>> threeSum(int[] nums) {
+        int n = nums.length;
+        if (n < 3) return res;
+
+        Arrays.sort(nums);
+
+        // Fix one element at a time
+        for (int i = 0; i < n - 2; i++) {
+            // Skip duplicates for fixed element
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+
+            int n1 = nums[i];
+            int target = -n1;
+
+            // Find pairs (n2, n3) such that n2 + n3 = -n1
+            twoSum(nums, target, i + 1, n - 1);
+        }
+
+        return res;
+    }
+}
+
