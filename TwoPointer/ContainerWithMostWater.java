@@ -38,3 +38,49 @@ class Solution {
         return res;
     }
 }
+
+// Approach: Two Pointers (Optimized)
+
+/*
+Approach:
+1. Place two pointers: one at the start (i = 0), one at the end (j = n-1).
+2. Compute the area formed by heights[i] and heights[j]:
+      height = min(heights[i], heights[j])
+      width  = j - i
+      area   = height * width
+3. Update the maximum area (res).
+4. Move the pointer pointing to the smaller height inward:
+      - If heights[i] <= heights[j], then i++
+      - Else j--
+   (This works because the limiting factor is the smaller height.)
+5. Repeat until i < j.
+
+Time Complexity:
+- O(n), since each element is visited at most once by either pointer.
+
+Space Complexity:
+- O(1), as only a few extra variables are used.
+*/
+
+class Solution {
+    public int maxArea(int[] heights) {
+        int n = heights.length;
+        int i = 0;
+        int j = n - 1;
+        int res = 0;
+
+        while (i < j) {
+            int water = Math.min(heights[i], heights[j]) * (j - i);
+            res = Math.max(res, water);
+
+            if (heights[i] <= heights[j]) {
+                i++;
+            } else {
+                j--;
+            }
+        }
+
+        return res;
+    }
+}
+
