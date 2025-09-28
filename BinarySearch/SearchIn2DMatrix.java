@@ -24,6 +24,40 @@ public class Solution {
     }
 }
 
+// Approach: Staircase Search (Start from Top-Right Corner)
+//
+// Explanation:
+// 1. Start from the top-right corner (row = 0, col = n-1).
+// 2. If matrix[row][col] > target → move left (col--).
+// 3. If matrix[row][col] < target → move down (row++).
+// 4. If equal → return true.
+// 5. Continue until indices go out of bounds.
+// 6. If not found, return false.
+//
+// Time Complexity: O(m + n)
+//   - At most m+n steps since we move either left or down in each step.
+// Space Complexity: O(1)
+//   - Only constant space used.
+
+public class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int m = matrix.length, n = matrix[0].length;
+        int r = 0, c = n - 1;
+
+        while (r < m && c >= 0) {
+            if (matrix[r][c] > target) {
+                c--; // move left
+            } else if (matrix[r][c] < target) {
+                r++; // move down
+            } else {
+                return true; // found
+            }
+        }
+        return false;
+    }
+}
+
+
 
 // Approach: Binary Search on Flattened Matrix
 //
