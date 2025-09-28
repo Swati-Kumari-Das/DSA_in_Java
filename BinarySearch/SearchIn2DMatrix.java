@@ -23,3 +23,45 @@ public class Solution {
         return false;
     }
 }
+
+
+// Approach: Binary Search on Flattened Matrix
+//
+// Explanation:
+// 1. Treat the 2D matrix as a sorted 1D array of size (m * n).
+// 2. Use binary search with indices [0 .. m*n - 1].
+//    - Convert a 1D index `mid` to 2D: 
+//         row = mid / n, col = mid % n
+//    - Compare matrix[row][col] with target.
+// 3. If found, return true. Otherwise adjust search space.
+// 4. If not found, return false.
+//
+// Time Complexity: O(log(m * n)) 
+//   - Binary search over m*n elements.
+// Space Complexity: O(1) 
+//   - Only constant extra space used.
+
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int start = 0;
+        int end = m * n - 1;
+
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            int r = mid / n;
+            int c = mid % n;
+            int val = matrix[r][c];
+
+            if (target == val) {
+                return true;
+            } else if (target < val) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+        }
+        return false;
+    }
+}
