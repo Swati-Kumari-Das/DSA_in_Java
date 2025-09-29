@@ -81,3 +81,43 @@ public class BestTimeToBuyAndSellStockOptimized {
     }
 }
 
+/*
+    Approach:
+    - Keep track of the minimum price observed so far while traversing the array.
+    - For each price:
+        * If it's lower than the current minPrice, update minPrice.
+        * Otherwise, calculate profit = price - minPrice
+          and update maxProfit if this profit is larger.
+    - By the end, maxProfit will hold the maximum possible profit.
+
+    Time Complexity: O(n) → Single pass through the array
+    Space Complexity: O(1) → Only constant variables used
+*/
+
+public class BestTimeToBuyAndSellStockDP {
+
+    public static int maxProfit(int[] prices) {
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+
+        for (int price : prices) {
+            if (price < minPrice) {
+                minPrice = price;
+            } else {
+                maxProfit = Math.max(maxProfit, price - minPrice);
+            }
+        }
+        return maxProfit;
+    }
+
+    // Driver code for testing
+    public static void main(String[] args) {
+        int[] prices1 = {10, 1, 5, 6, 7, 1};
+        int[] prices2 = {10, 8, 7, 5, 2};
+
+        System.out.println("Max Profit (Example 1): " + maxProfit(prices1)); // Output: 6
+        System.out.println("Max Profit (Example 2): " + maxProfit(prices2)); // Output: 0
+    }
+}
+
+
