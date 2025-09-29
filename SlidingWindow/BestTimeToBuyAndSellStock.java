@@ -37,3 +37,47 @@ public class BestTimeToBuyAndSellStock {
         System.out.println("Max Profit (Example 2): " + maxProfit(prices2)); // Output: 0
     }
 }
+
+/*
+    Approach:
+    - Use two pointers (sliding window).
+    - Pointer i = buy day, pointer j = sell day.
+    - Traverse the array while j < n:
+        * If prices[j] > prices[i], calculate profit = prices[j] - prices[i]
+          and update maxProfit if it's larger.
+        * Else, move i = j (shift the buy pointer to a cheaper price).
+    - Continue until the end and return maxProfit.
+
+    Time Complexity: O(n) → Single pass through the array
+    Space Complexity: O(1) → Only constant extra variables used
+*/
+
+public class BestTimeToBuyAndSellStockOptimized {
+
+    public static int maxProfit(int[] prices) {
+        int i = 0;  // Buy pointer
+        int j = 1;  // Sell pointer
+        int maxProfit = 0;
+
+        while (j < prices.length) {
+            if (prices[i] < prices[j]) {
+                int profit = prices[j] - prices[i];
+                maxProfit = Math.max(maxProfit, profit);
+            } else {
+                i = j; // update buy day to cheaper price
+            }
+            j++;
+        }
+        return maxProfit;
+    }
+
+    // Driver code for testing
+    public static void main(String[] args) {
+        int[] prices1 = {10, 1, 5, 6, 7, 1};
+        int[] prices2 = {10, 8, 7, 5, 2};
+
+        System.out.println("Max Profit (Example 1): " + maxProfit(prices1)); // Output: 6
+        System.out.println("Max Profit (Example 2): " + maxProfit(prices2)); // Output: 0
+    }
+}
+
