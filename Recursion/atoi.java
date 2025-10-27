@@ -75,3 +75,90 @@ public class Solution {
         System.out.println(sol.myAtoi("-91283472332"));   // -2147483648
     }
 }
+
+/*
+ * 🧩 Problem: String to Integer (atoi) — Recursive Approach
+ *
+ * Implement the myAtoi(String s) function recursively.
+ *
+ * 🔹 Approach:
+ * The recursive version breaks down the iterative process into smaller steps.
+ *
+ * 1️⃣ Skip leading whitespaces:
+ *     - Move index forward until a non-space is found.
+ *
+ * 2️⃣ Detect sign (+ or -):
+ *     - If current char is '-', sign = -1; if '+', sign = 1.
+ *
+ * 3️⃣ Recursive conversion:
+ *     - Base case: stop if index >= length or char is not a digit.
+ *     - Recursive case: 
+ *           res = res * 10 + current_digit
+ *           call helper(s, next_index, res, sign)
+ *
+ * 4️⃣ Overflow check:
+ *     - Before each recursive call, check if sign * res exceeds 32-bit range.
+ *
+ * 5️⃣ Return result:
+ *     - Once base condition reached, return (int)(sign * res)
+ *
+ * 🕒 Time Complexity: O(n)
+ *     - Each character is processed once recursively.
+ *
+ * 🧠 Space Complexity: O(n)
+ *     - Due to recursion call stack (worst-case all characters are digits).
+ */
+
+public class RecursiveAtoi {
+
+    public int myAtoi(String s) {
+        int i = 0;
+
+        // 1️⃣ Skip leading whitespaces
+        while (i < s.length() && s.charAt(i) == ' ') {
+            i++;
+        }
+        if (i == s.length()) return 0;
+
+        // 2️⃣ Detect sign
+        int sign = 1;
+        if (s.charAt(i) == '-') {
+            sign = -1;
+            i++;
+        } else if (s.charAt(i) == '+') {
+            i++;
+        }
+
+        // 3️⃣ Start recursive helper
+        return helper(s, i, 0L, sign);
+    }
+
+    // 🔁 Recursive helper function
+    private int helper(String s, int i, long res, int sign) {
+        // Base case: stop if not a digit or end of string
+        if (i >= s.length() || !Character.isDigit(s.charAt(i))) {
+            return (int)(sign * res);
+        }
+
+        // Convert current char to digit
+        int digit = s.charAt(i) - '0';
+        res = res * 10 + digit;
+
+        // Overflow / underflow check
+        if (sign * res > Integer.MAX_VALUE) return Integer.MAX_VALUE;
+        if (sign * res < Integer.MIN_VALUE) return Integer.MIN_VALUE;
+
+        // Recursive call for next character
+        return helper(s, i + 1, res, sign);
+    }
+
+    // 🧪 Optional main() for local testing
+    public static void main(String[] args) {
+        RecursiveAtoi sol = new RecursiveAtoi();
+        System.out.println(sol.myAtoi("42"));              // 42
+        System.out.println(sol.myAtoi("   -42"));          // -42
+        System.out.println(sol.myAtoi("4193 with words")); // 4193
+        System.out.println(sol.myAtoi("words 987"));       // 0
+        System.out.println(sol.myAtoi("-91283472332"));    // -2147483648
+    }
+}
