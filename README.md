@@ -7,6 +7,6 @@
 # 🧮 Recursion 
 
 
- [DecimalToBinary.java](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Recursion/DecimalToBinary.java)
- [Power.java](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Recursion/Power.java)
- [atoi.java](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Recursion/atoi.java)
+- [DecimalToBinary.java](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Recursion/DecimalToBinary.java)
+ - [Power.java](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Recursion/Power.java)
+ - [atoi.java](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Recursion/atoi.java)
