@@ -68,3 +68,69 @@ public class Solution {
         return false;
     }
 }
+
+
+/*
+
+ * -------------------------------------------------------------------
+ * Approach: Sliding Window (Optimized)
+ * -------------------------------------------------------------------
+ * 1. Create a frequency array for all characters in s1 (size 26).
+ * 2. Use two pointers (left, right) to represent a sliding window on s2.
+ * 3. Expand the window by moving 'right' — decrement count for the current char.
+ *    - If a character was still needed (count > 0), decrement counter.
+ * 4. When all required characters are matched (counter == 0):
+ *    - Check if window size == s1.length() → return true.
+ *    - Else, shrink window from the left.
+ * 5. Move 'left' pointer ahead and restore counts for characters that leave.
+ * 6. Continue until the end of s2.
+ * 
+ * -------------------------------------------------------------------
+ * Time Complexity: O(n)
+ * - Each character in s2 is processed at most twice (entering & leaving window).
+ * 
+ * Space Complexity: O(1)
+ * - Constant space (26 letters).
+ * 
+ * -------------------------------------------------------------------
+ * This is the optimal solution for the problem.
+ */
+
+public class Solution {
+    public boolean checkInclusion(String s1, String s2) {
+
+        // Edge case: s2 shorter than s1 -> no permutation possible
+        if (s2.length() < s1.length()) return false;
+
+        int left = 0, right = 0;
+        int counter = s1.length();  // number of chars still needed to match
+        int[] letters = new int[26]; // frequency array for lowercase letters
+
+        // Step 1: Fill frequency map for s1
+        for (int i = 0; i < s1.length(); i++) {
+            letters[s1.charAt(i) - 'a']++;
+        }
+
+        // Step 2: Slide the window across s2
+        while (right < s2.length()) {
+            int val = s2.charAt(right) - 'a';
+
+            // If this char is needed, reduce counter
+            if (letters[val] > 0) counter--;
+            letters[val]--;
+            right++;
+
+            // Step 3: When all chars matched, check window size
+            while (counter == 0) {
+                if (right - left == s1.length()) return true;
+
+                // Shrink window from left
+                int startLetter = s2.charAt(left) - 'a';
+                letters[startLetter]++;
+                if (letters[startLetter] > 0) counter++;
+                left++;
+            }
+        }
+        return false;
+    }
+}
