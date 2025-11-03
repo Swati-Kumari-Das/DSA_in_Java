@@ -10,7 +10,7 @@
  - [Power.java](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Recursion/Power.java)
  - [atoi.java](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Recursion/atoi.java)
 
-# SlidingWindow Approach 
+# SlidingWindow 
 - [Permutation in String (LeetCode #567)](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/SlidingWindow/PermutationInStr.java)
 
 
