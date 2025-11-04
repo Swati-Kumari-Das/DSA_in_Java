@@ -17,3 +17,5 @@
 # Sorting
 - [Bubble Sort (Optimized)](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Sorting/BubbleSort.java)
 - [Selection Sort](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Sorting/SelectionSort.java)
+- [Insertion Sort (Swap-Based)](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Sorting/InsertionSort.java)
+
