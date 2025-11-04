@@ -19,7 +19,7 @@
 public class Solution {
     public void bubbleSort(int[] arr) {
         int n = arr.length;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n-1; i++) {
             boolean swap = false; // flag to check if any swap happened in this pass
 
             for (int j = 0; j < n - 1 - i; j++) {
