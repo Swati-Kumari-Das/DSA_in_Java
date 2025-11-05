@@ -1,6 +1,8 @@
 // ReverseString_Approach.java
 
 /*
+
+Reassigning a string in Java creates a new string object in the pool while the reference moves. Immutable strings ensure the old literal remains unchanged. intern() makes multiple strings share the same SCP object.
 Approach:
 ---------
 1️⃣ Convert the string to a character array
