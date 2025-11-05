@@ -26,4 +26,5 @@
 - [Count number of vowels and consonants and spaces in String](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/02_Count_number_of_vowels_and_consonants_and_spaces_in_String.java)
 -  [Remove all vowels from the String](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/03_Remove_all_vowels_from_the_String.java)
 - [Remove characters from a string except alphabets](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/04_Remove_characters_from_a_string_except_alphabets.java)
+- [Reverse a String](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/05_Reverse_a_String.java)
 
