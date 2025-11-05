@@ -24,3 +24,5 @@
 # String
 - [Check if the String is Palindrome](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/01_Check_if_the_given_String_is_Palindrome_or_not.java)
 - [Count number of vowels and consonants and spaces in String](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/02_Count_number_of_vowels_and_consonants_and_spaces_in_String.java)
+- - [Remove all vowels from the String](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/03_Remove_all_vowels_from_the_String.java)
+
