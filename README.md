@@ -20,3 +20,6 @@
 - [Insertion Sort (Swap-Based)](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Sorting/InsertionSort.java)
 - [Quick Sort](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Sorting/QuickSort.java)
 - [Merge Sort](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Sorting/MergeSort.java)
+
+# String
+- [Check if the String is Palindrome](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/01_Check_if_the_given_String_is_Palindrome_or_not.java)
