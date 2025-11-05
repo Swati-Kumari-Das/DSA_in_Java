@@ -28,3 +28,4 @@
 - [Remove characters from a string except alphabets](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/04_Remove_characters_from_a_string_except_alphabets.java)
 - [Reverse a String](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/05_Reverse_a_String.java)
 - [Sum of Numbers in String](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/06_SumOfNumbersInString.java)
+- [Capitalize First & Last](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/Capitalize_first_and_last_character_of_each%20_word.md)
