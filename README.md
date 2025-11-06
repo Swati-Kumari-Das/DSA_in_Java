@@ -28,7 +28,7 @@
 - [Remove characters from a string except alphabets](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/04_Remove_characters_from_a_string_except_alphabets.java)
 - [Reverse a String](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/05_Reverse_a_String.java)
 - [Sum of Numbers in String](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/06_SumOfNumbersInString.java)
--[Capitalize First and Last Character of Each Word](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/Capitalize_first_and_last_character_of_each%20_word.java)
--[Find Non-Repeating Characters of a String](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/Find_Non_repeating_characters_of_a_String.java)
--[Valid Anagram](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/ValidAnagram.java)
+- [Capitalize First and Last Character of Each Word](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/Capitalize_first_and_last_character_of_each%20_word.java)
+- [Find Non-Repeating Characters of a String](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/Find_Non_repeating_characters_of_a_String.java)
+- [Valid Anagram](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/ValidAnagram.java)
 
