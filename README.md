@@ -31,4 +31,5 @@
 - [Capitalize First and Last Character of Each Word](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/Capitalize_first_and_last_character_of_each%20_word.java)
 - [Find Non-Repeating Characters of a String](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/Find_Non_repeating_characters_of_a_String.java)
 - [Valid Anagram](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/ValidAnagram.java)
+- [Frequency Of Elements](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/FrequencyOfElements.java)
 
