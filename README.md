@@ -1,3 +1,7 @@
+## Arrays
+- [First and Second Smallest](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/FirstAndSecondSmallest.java)
+
+
 ## 🔗 Linked List
 
 - [Merge Two Sorted Linked List](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/LinkedList/MergeTwoSortedLinkedList.java)
