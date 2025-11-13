@@ -1,6 +1,7 @@
 ## Arrays
 - [First and Second Smallest](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/FirstAndSecondSmallest.java)
 - [CountFeq](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/CountFeq.java)
+- [Second Largest Element](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/SecondLargest.java)
 
 
 ## 🔗 Linked List
