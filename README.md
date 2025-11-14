@@ -38,4 +38,5 @@
 - [Find Non-Repeating Characters of a String](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/Find_Non_repeating_characters_of_a_String.java)
 - [Valid Anagram](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/ValidAnagram.java)
 - [Frequency Of Elements](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/String/FrequencyOfElements.java)
+- [Custom Sort](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/CustomSort.java)
 
