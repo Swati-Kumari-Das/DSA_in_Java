@@ -5,6 +5,8 @@
 - [Remove Duplicates](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/RemoveDuplicates.java)
 - [Remove Duplicates From Unsorted Array](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/RemoveDuplicatesFromUnsortedArray.java)
 - [Adding Array Elements](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/AddingArrayElements.java)
+- [Find All Duplicates](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/FindAllDuplicates.java)
+
 
 
 
