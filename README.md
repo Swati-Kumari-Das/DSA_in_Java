@@ -7,7 +7,7 @@
 - [Adding Array Elements](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/AddingArrayElements.java)
 - [Find All Duplicates](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/FindAllDuplicates.java)
 - [Maximum Product Subarray](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/MaximunProductSubarray.java)
-
+- [Replace Elements By Rank](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/ReplaceElementsByRank.java)
 
 
 
