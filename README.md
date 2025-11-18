@@ -9,6 +9,7 @@
 - [Maximum Product Subarray](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/MaximunProductSubarray.java)
 - [Replace Elements By Rank](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/ReplaceElementsByRank.java)
 - [Sort Elements By Frequency](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/SortElementsByFrequency.java)
+- [Pivot Index](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/pivotIndex.java)
 
 
 
