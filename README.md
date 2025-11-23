@@ -14,6 +14,8 @@
 
 ## Numbers
 - [Leap Year](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Numbers/LeapYear.java)
+- [Fibonacci Series](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Numbers/FibonacciSeries.java)
+
 
 
 ## 🔗 Linked List
