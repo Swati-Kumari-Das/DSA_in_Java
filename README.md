@@ -12,6 +12,8 @@
 - [Pivot Index](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Arrays/pivotIndex.java)
 - [Prime Range](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Maths/PrimeRange.java)
 
+## Numbers
+- [Leap Year](https://github.com/Swati-Kumari-Das/DSA_in_Java/blob/main/Numbers/LeapYear.java)
 
 
 ## 🔗 Linked List
